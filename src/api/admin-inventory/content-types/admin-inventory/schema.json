@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "admin_inventories",
+  "info": {
+    "singularName": "admin-inventory",
+    "pluralName": "admin-inventories",
+    "displayName": "AdminInventory "
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderDate": {
+      "type": "date",
+      "required": true
+    },
+    "quantityOrdered": {
+      "type": "integer"
+    },
+    "DeliveryStatus": {
+      "type": "boolean"
+    },
+    "DeliveryDate": {
+      "type": "date"
+    },
+    "stores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::store.store"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    }
+  }
+}

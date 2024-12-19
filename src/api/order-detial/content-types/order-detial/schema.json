@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_detials",
+  "info": {
+    "singularName": "order-detial",
+    "pluralName": "order-detials",
+    "displayName": "OrderDetial",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quantity": {
+      "type": "biginteger",
+      "required": true
+    },
+    "SubTotal": {
+      "required": true,
+      "type": "decimal"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "order_detials"
+    },
+    "UnitPrice": {
+      "type": "decimal"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stores",
+  "info": {
+    "singularName": "store",
+    "pluralName": "stores",
+    "displayName": "store",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "storeName": {
+      "type": "string",
+      "required": true
+    },
+    "storeAddress": {
+      "type": "string",
+      "required": true
+    },
+    "workingHours": {
+      "type": "string",
+      "required": true
+    },
+    "purchase_orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::purchase-order.purchase-order",
+      "mappedBy": "store"
+    },
+    "sales_histories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sales-history.sales-history",
+      "mappedBy": "store"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "store"
+    },
+    "StoreEmail": {
+      "type": "email",
+      "required": false
+    }
+  }
+}

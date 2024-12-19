@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productName": {
+      "type": "string",
+      "required": true
+    },
+    "size": {
+      "type": "string",
+      "required": true
+    },
+    "packaging": {
+      "type": "string",
+      "required": true
+    },
+    "ProductType": {
+      "type": "enumeration",
+      "enum": [
+        "Engine Parts",
+        "Transmission Parts",
+        "Electrical Components",
+        "Suspension and Steering",
+        "Brake System Parts",
+        "Exhaust System",
+        "Cooling System",
+        "Filters and Fluids",
+        "Body and Interior Parts",
+        "Fuel System",
+        "Tires and Wheels",
+        "Accessories and Tools"
+      ]
+    },
+    "Brand": {
+      "type": "string"
+    }
+  }
+}

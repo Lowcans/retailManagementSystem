@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales_histories",
+  "info": {
+    "singularName": "sales-history",
+    "pluralName": "sales-histories",
+    "displayName": "SalesHistory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "saleDate": {
+      "required": true,
+      "type": "date"
+    },
+    "unitSold": {
+      "type": "biginteger",
+      "required": true
+    },
+    "totalSaleAmount": {
+      "type": "decimal",
+      "required": true
+    },
+    "store": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::store.store",
+      "inversedBy": "sales_histories"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    }
+  }
+}
